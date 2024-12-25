@@ -91,8 +91,10 @@ void get_pulse(void *pvParameters) {
 
     //After gathering 25 new samples recalculate HR and SP02
     maxim_heart_rate_and_oxygen_saturation(irBuffer, bufferLength, redBuffer, &spo2, &validSPO2, &heartRate, &validHeartRate);
-    vars->beatAvg = heartRate;
-    vars->SPO2 = spo2;
+    if (heartRate != -999)
+      vars->beatAvg = heartRate;
+    if (spo2 != -999)
+      vars->SPO2 = spo2;
     vTaskDelay(1000 / portTICK_PERIOD_MS); //Take 1000 samples per second
   }
 }
