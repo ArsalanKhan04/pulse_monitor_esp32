@@ -1,0 +1,10 @@
+# ESP-IDF build outputs
+build/
+sdkconfig
+sdkconfig.old
+*.pyc
+*.log
+.vscode/
+.idea/
+.DS_Store
+
