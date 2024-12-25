@@ -1,0 +1,18 @@
+[submodule "components/Adafruit-GFX-Library"]
+	path = components/Adafruit-GFX-Library
+	url = https://github.com/adafruit/Adafruit-GFX-Library.git
+[submodule "components/Adafruit_BusIO"]
+	path = components/Adafruit_BusIO
+	url = https://github.com/adafruit/Adafruit_BusIO.git
+[submodule "components/Adafruit_SSD1306"]
+	path = components/Adafruit_SSD1306
+	url = https://github.com/adafruit/Adafruit_SSD1306.git
+[submodule "components/arduino"]
+	path = components/arduino
+	url = https://github.com/espressif/arduino-esp32.git
+[submodule "components/TinyGPSPlus"]
+	path = components/TinyGPSPlus
+	url = https://github.com/mikalhart/TinyGPSPlus.git
+[submodule "components/max30105"]
+	path = components/max30105
+	url = https://github.com/sparkfun/SparkFun_MAX3010x_Sensor_Library.git
