@@ -8,13 +8,14 @@
 #include <TinyGPS++.h>
 #include "esp_http_client.h"
 #include "senddata.h"
+#include "gps.h"
 
 
 pulse_vars pulse;
+gps_vars gps_v;
 oled_data oled;
-float lon = 60, lat = 70;
-int oxy = 50;
-display_vars displayvars(pulse.beatAvg, lon, lat, oxy);
+float lon = 72.987799, lat = 33.644099;
+display_vars displayvars(pulse.beatAvg, gps_v.lon, gps_v.lat, pulse.SPO2);
 
 void setup()
 {
@@ -23,6 +24,7 @@ void setup()
 
   oled_setup();
   pulse_setup();
+  gps_setup();
 
   pulse.irValue = 0;
   pulse.beatAvg = 0;
@@ -45,10 +47,18 @@ void setup()
       NULL
     );
   xTaskCreate(
-      oled_display,
+      displaySlideshow,
       "Oled Display",
       2048,
       &oled,
+      1,
+      NULL
+    );
+  xTaskCreate(
+      get_gps_data,
+      "GPS Task",
+      2048,
+      &gps_v,
       1,
       NULL
     );
@@ -57,13 +67,10 @@ void setup()
 void loop() {
   printf("IR=");
   printf("%ld", pulse.irValue);
-  printf(", BPM=");
-  printf("%f", pulse.beatsPerMinute);
   printf(", Avg BPM=");
   printf("%d", pulse.beatAvg);
   oled.bpm = pulse.beatAvg;
-  oled.lati = 70;
-  oled.longi = 60;
+  oled.oxy = pulse.SPO2;
 
   if (pulse.irValue < 50000)
     printf(" No finger?");

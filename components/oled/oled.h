@@ -17,6 +17,7 @@
 
 struct oled_data {
   int bpm;
+  int oxy;
   float longi;
   float lati;
 };
@@ -24,6 +25,8 @@ struct oled_data {
 void oled_display(void *pvParameters);
 void oled_setup();
 void oled_check();
+void displaySlideshow(void *pvParameters);
+void displayTask(void *pvParameters);
 
 #endif
 

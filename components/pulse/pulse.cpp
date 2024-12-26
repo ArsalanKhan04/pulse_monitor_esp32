@@ -95,6 +95,6 @@ void get_pulse(void *pvParameters) {
       vars->beatAvg = heartRate;
     if (spo2 != -999)
       vars->SPO2 = spo2;
-    vTaskDelay(1000 / portTICK_PERIOD_MS); //Take 1000 samples per second
+    vars->irValue = irBuffer[99];
   }
 }

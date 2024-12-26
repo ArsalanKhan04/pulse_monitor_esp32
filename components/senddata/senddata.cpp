@@ -1,11 +1,11 @@
 #include "senddata.h"
 
 
-const char* ssid = "Add Network 2.4G";
-const char* password = "Pakistan47";
+const char* ssid = "Galaxy A7159B4";
+const char* password = "bruh1234";
 
 const char* webhookUrl = "http://webhook.site/200b0e63-4ae5-4455-b10e-f4de3e972ee4";
-const char* serverUrl = "http://7046-2a09-bac5-5039-18c8-00-278-7b.ngrok-free.app/post_sensor_data";
+const char* serverUrl = "http://da9a-2a09-bac1-5b40-20-00-3c4-43.ngrok-free.app/post_sensor_data";
 const char* TAG = "HTTP_CLIENT";
 
 String ipStr;
@@ -96,7 +96,7 @@ void sendToServer(void *pvParameters) {
           printf("Failed to send data. Error: %s\n", esp_err_to_name(err));
       }
       esp_http_client_cleanup(client);
-      vTaskDelay(2000 / portTICK_PERIOD_MS);  // Delay for 10 seconds
+      vTaskDelay(5000 / portTICK_PERIOD_MS);  // Delay for 10 seconds
   }
 }
 

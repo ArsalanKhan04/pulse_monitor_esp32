@@ -7,4 +7,5 @@ sdkconfig.old
 .vscode/
 .idea/
 .DS_Store
+.cache
 

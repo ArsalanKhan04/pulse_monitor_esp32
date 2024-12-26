@@ -24,7 +24,8 @@ void get_gps_data(void *pvParameters)
         {
             vars->lat = gps.location.lat();
             vars->lon = gps.location.lng();
+            printf("Latitude: %f, Longitude: %f\n", vars->lat, vars->lon);
         }
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        vTaskDelay(3000 / portTICK_PERIOD_MS);
     }
 }
