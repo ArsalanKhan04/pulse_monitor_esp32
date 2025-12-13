@@ -11,7 +11,7 @@
 #include "gps.h"
 
 
-
+// Output variables
 pulse_vars pulse;
 gps_vars gps_v;
 oled_data oled;

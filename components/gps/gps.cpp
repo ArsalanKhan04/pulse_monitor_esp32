@@ -10,7 +10,7 @@ void gps_setup()
     printf("Serial 2 started at 9600 baud\n");
 }
 
-
+// Get GPS data function
 void get_gps_data(void *pvParameters)
 {
     gps_vars *vars = (gps_vars *)pvParameters;

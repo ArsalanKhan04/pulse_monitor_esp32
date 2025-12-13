@@ -10,6 +10,7 @@ void oled_setup() {
 
 }
 
+// oled display function
 void oled_display(void *pvParameters) {
   oled_data *data = (oled_data *)pvParameters;
   while(1) {
