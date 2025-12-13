@@ -1,11 +1,12 @@
 #include "senddata.h"
 
 
-const char* ssid = "Galaxy A7159B4";
+const char* ssid = "Nothing 2A";
 const char* password = "bruh1234";
 
 const char* webhookUrl = "http://webhook.site/200b0e63-4ae5-4455-b10e-f4de3e972ee4";
-const char* serverUrl = "http://da9a-2a09-bac1-5b40-20-00-3c4-43.ngrok-free.app/post_sensor_data";
+const char* serverUrl = "http://dfe135dcdbfd.ngrok-free.app/post_sensor_data";
+
 const char* TAG = "HTTP_CLIENT";
 
 String ipStr;
