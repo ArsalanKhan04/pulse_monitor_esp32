@@ -86,8 +86,8 @@ void get_pulse(void *pvParameters) {
 
 
     }
-    printf(" Avg BPM=%d\n", vars->beatAvg);
-    printf(" SPO2=%d\n", vars->SPO2);
+    ESP_LOGI(TAG, "Avg BPM=%d", vars->beatAvg);
+    ESP_LOGI(TAG, "SPO2=%d", vars->SPO2);
 
     //After gathering 25 new samples recalculate HR and SP02
     maxim_heart_rate_and_oxygen_saturation(irBuffer, bufferLength, redBuffer, &spo2, &validSPO2, &heartRate, &validHeartRate);
