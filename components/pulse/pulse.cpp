@@ -17,8 +17,6 @@ int8_t validHeartRate; //indicator to show if the heart rate calculation is vali
 byte readLED = 26; //Blinks with each data read
 
 
-int dis_t = 0;
-
 void pulse_setup() {
   ESP_LOGI(TAG, "Initializing pulse sensor...\n");
   I2C_1.begin(18, 19);
